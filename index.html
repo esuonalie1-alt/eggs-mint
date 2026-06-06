@@ -1,28 +1,247 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>EGGS NFT</title>
 
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    background:#111;
+    background:#0a0a0a;
     color:white;
+    font-family:Arial, sans-serif;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo-text{
+    font-size:32px;
+    font-weight:bold;
+}
+
+.menu{
+    display:flex;
+    gap:30px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
     text-align:center;
-    font-family:Arial;
-    padding-top:50px;
 }
 
-.logo{
+.hero img{
+
     width:300px;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,0.2),
+    0 0 80px rgba(255,255,255,0.15);
+
+    animation:float 4s ease-in-out infinite;
 }
 
-button{
-    padding:15px 30px;
-    font-size:20px;
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    margin-top:30px;
+}
+
+.subtitle{
+
+    font-size:22px;
+
+    color:#ccc;
+
+    margin-top:15px;
+}
+
+.stats{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:40px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+.card{
+
+    width:220px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    padding:20px;
+}
+
+.card h3{
+    font-size:18px;
+    color:#aaa;
+}
+
+.card p{
+    margin-top:10px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.progress{
+
+    width:500px;
+
+    max-width:90%;
+
+    height:20px;
+
+    background:#222;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:40px;
+}
+
+.progress-fill{
+
+    width:25%;
+
+    height:100%;
+
+    background:linear-gradient(
+    90deg,
+    #facc15,
+    #f97316
+    );
+}
+
+.btn{
+
+    margin-top:40px;
+
+    padding:18px 50px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
     cursor:pointer;
+
+    background:linear-gradient(
+    90deg,
+    #facc15,
+    #f97316
+    );
+
+    color:black;
+}
+
+.btn:hover{
+
+    transform:scale(1.05);
+}
+
+.section{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:100px 30px;
+}
+
+.section h2{
+
+    font-size:48px;
+
+    margin-bottom:30px;
+}
+
+.section p{
+
+    color:#ccc;
+
+    line-height:1.8;
+}
+
+.roadmap-item{
+
+    background:rgba(255,255,255,0.05);
+
+    margin-bottom:20px;
+
+    padding:25px;
+
+    border-radius:15px;
+}
+
+footer{
+
+    text-align:center;
+
+    padding:50px;
+
+    color:#777;
 }
 
 </style>
@@ -31,17 +250,119 @@ button{
 
 <body>
 
-<img src="logo.png" class="logo">
+<nav>
+
+<div class="logo-text">
+🥚 EGGS NFT
+</div>
+
+<div class="menu">
+
+<a href="#about">About</a>
+
+<a href="#roadmap">Roadmap</a>
+
+<a href="#faq">FAQ</a>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<img src="logo.png">
 
 <h1>EGGS NFT</h1>
 
-<p>Total Supply: 10000</p>
+<p class="subtitle">
+10,000 Unique Eggs On Nexus
+</p>
 
-<p>Mint Price: 1 NEX</p>
+<div class="stats">
 
-<button>
+<div class="card">
+<h3>Total Supply</h3>
+<p>10000</p>
+</div>
+
+<div class="card">
+<h3>Mint Price</h3>
+<p>0.1 NEX</p>
+</div>
+
+<div class="card">
+<h3>Minted</h3>
+<p>2500</p>
+</div>
+
+</div>
+
+<div class="progress">
+<div class="progress-fill"></div>
+</div>
+
+<button class="btn">
 Connect Wallet
 </button>
+
+</section>
+
+<section id="about" class="section">
+
+<h2>About</h2>
+
+<p>
+EGGS NFT is a collection of 10,000 eggs living on the Nexus blockchain.
+Each NFT grants access to future community rewards and ecosystem events.
+</p>
+
+</section>
+
+<section id="roadmap" class="section">
+
+<h2>Roadmap</h2>
+
+<div class="roadmap-item">
+Phase 1 — Launch Website
+</div>
+
+<div class="roadmap-item">
+Phase 2 — Open Mint
+</div>
+
+<div class="roadmap-item">
+Phase 3 — Marketplace Listing
+</div>
+
+<div class="roadmap-item">
+Phase 4 — Community Rewards
+</div>
+
+</section>
+
+<section id="faq" class="section">
+
+<h2>FAQ</h2>
+
+<p>
+Q: How many NFTs?<br>
+A: 10,000
+</p>
+
+<br>
+
+<p>
+Q: What is the mint price?<br>
+A: 0.1 NEX
+</p>
+
+</section>
+
+<footer>
+
+© 2026 EGGS NFT
+
+</footer>
 
 </body>
 
