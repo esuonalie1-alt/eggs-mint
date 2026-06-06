@@ -1,3 +1,5 @@
+let walletAddress = "";
+
 async function connectWallet() {
 
     if (!window.ethereum) {
@@ -7,9 +9,17 @@ async function connectWallet() {
         return;
     }
 
-    await window.ethereum.request({
-        method: "eth_requestAccounts"
-    });
+    const accounts =
+        await window.ethereum.request({
+            method: "eth_requestAccounts"
+        });
 
-    alert("钱包连接成功");
+    walletAddress = accounts[0];
+
+    document.querySelector(".btn").innerText =
+        walletAddress.substring(0,6)
+        + "..."
+        + walletAddress.substring(
+            walletAddress.length - 4
+        );
 }
