@@ -22,4 +22,25 @@ async function connectWallet() {
         + walletAddress.substring(
             walletAddress.length - 4
         );
+
+    const provider =
+        new ethers.BrowserProvider(
+            window.ethereum
+        );
+
+    const balanceWei =
+        await provider.getBalance(
+            walletAddress
+        );
+
+    const balance =
+        ethers.formatEther(
+            balanceWei
+        );
+
+    document.getElementById(
+        "balance"
+    ).innerText =
+        "Balance: "
+        + Number(balance).toFixed(4);
 }
